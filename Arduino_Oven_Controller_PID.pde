@@ -9,17 +9,7 @@
   PID Relay example is weakly commented.  Analog example
   is much better.  Minimum time is ok?
   
-  // I had to disable error checking to insert a negative Kd  
-  // (a negative derivative coefficient).  I am sure I want a 
-  // negative derivative coefficient because the system is mostly
-  // off (not working hard).  If it stops working, the temperature
-  // drops very slowly.  Thus it's never important to have a 
-  // positive derivative coefficient.  
-  // Would I instead use an integral coefficient to avoid changing
-  // the PID source??   Then most of the "turn on" behavior is due 
-  // to the cumulative lack of sufficient temperature.
-  // the only problem is that I don't know how this parameter 
-  // behaves over time -- how long before integral is flushed?
+  // How long before integral is flushed?
   // I guess it's the "Window Size" parameter -- 5000 millis.
   
   This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
