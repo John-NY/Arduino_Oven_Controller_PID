@@ -1,0 +1,19 @@
+#######################################
+# Syntax Coloring Map For MAX31855
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+MAX31855	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+readMAX31855	KEYWORD2
+readCelsius	KEYWORD2
+readFarenheit	KEYWORD2
+readCJC	KEYWORD2
+readFaultCode	KEYWORD2
