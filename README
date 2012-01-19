@@ -1,0 +1,18 @@
+/****************************************************************
+*                                                               *
+*               Arduino Oven Controller README                  *
+*                                                               *
+****************************************************************/
+
+-> PID_v1 Library
+Written by Brett Beauregard, licensed under CC BY-SA 3.0
+This library is placed in the Arduino sketchbook folder
+e.g. Linux: ~/sketchbook/libraries/PID_v1
+e.g. Windows: "My Documents/Arduino/libraries/PID_v1"
+
+-> ryanjmclaughlinMAX31855 Library
+Written by Ryan McLaughlin, licensed under CC BY-SA 3.0
+This library is placed in the Arduino sketchbook folder
+e.g. Linux: ~/sketchbook/libraries/ryanjmclaughlinMAX31855
+e.g. Windows: "My Documents/Arduino/libraries/ryanjmclaughlinMAX31855"
+
