@@ -143,8 +143,10 @@ void process_string(char instruction[], int size)
 	int ind;
 	int len;	/* length of parameter argument */
 
-	gc->seen = 0;
-        gc->M = 0;
+	gc.seen = 0;
+        gc.M = 0;
+        gc.S = (float)GetSetpoint();
+        gc.R = (float)GetRate();
         
 	len=0;
 	/* scan the string for commands and parameters, recording the arguments for each,
@@ -156,37 +158,37 @@ void process_string(char instruction[], int size)
 		len = 0;
 		switch (instruction[ind])
 		{
-			  PARSE_INT('M', &instruction[ind+1], len, gc->M);
-			PARSE_FLOAT('S', &instruction[ind+1], len, gc->S);
-			PARSE_FLOAT('R', &instruction[ind+1], len, gc->R);
+			  PARSE_INT('M', &instruction[ind+1], len, gc.M);
+			PARSE_FLOAT('S', &instruction[ind+1], len, gc.S);
+			PARSE_FLOAT('R', &instruction[ind+1], len, gc.R);
                         default:
 			  break;
 		}
 	}
 
     Serial.print("M = ");
-    Serial.print(gc->M);
+    Serial.print(gc.M);
     Serial.print(", S = ");
-    Serial.print(gc->S);
+    Serial.print(gc.S);
     Serial.print(", R = ");
-    Serial.print(gc->R);
+    Serial.print(gc.R);
     Serial.println(", ");
 
     double newSetpoint = GetSetpoint();
     double newRate = GetRate();
-    if(gc->S >= TMIN)
+    if(gc.S >= TMIN)
     {
-        if(gc->S <= TMAX)
+        if(gc.S <= TMAX)
         {
-            newSetpoint = double(gc->S);
+            newSetpoint = double(gc.S);
             SetSetpoint(newSetpoint);
         }
     }
-    if(gc->R > RMIN)
+    if(gc.R > RMIN)
     {
-        if(gc->R < RMAX)
+        if(gc.R < RMAX)
         {
-            newRate = double(gc->R);
+            newRate = double(gc.R);
             SetRate(newRate);
         }
     }

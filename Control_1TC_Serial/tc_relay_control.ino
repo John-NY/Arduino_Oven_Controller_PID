@@ -4,7 +4,7 @@
 #include "parameters.h"
 
 double initialSetpoint = 20.0; // initial
-double finalSetpoint = 60; // goal
+double finalSetpoint = 20; // goal
 double heating_rate = 1; // degree per minute
 unsigned long initialTime = 0;
 
